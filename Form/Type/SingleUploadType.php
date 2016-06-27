@@ -5,7 +5,7 @@ namespace Avocode\FormExtensionsBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -23,7 +23,7 @@ class SingleUploadType extends AbstractType
         $data = array_key_exists('data', $view->vars) ? $view->vars['data'] : null;
 
         if($data instanceof UploadedFile && $form->getRoot()->getErrors()) {
-        	$view->vars['data'] = $data = null;
+            $view->vars['data'] = $data = null;
         }
 
         $view->vars = array_replace($view->vars, array(
@@ -62,9 +62,9 @@ class SingleUploadType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults(array(
             'nameable'          => false,

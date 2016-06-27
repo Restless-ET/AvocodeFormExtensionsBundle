@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author Piotr Gołębiewski <loostro@gmail.com>
@@ -27,12 +27,12 @@ class NoValidateExtension extends AbstractTypeExtension
         }
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'novalidate' => false,
         ));
-        
+
         $resolver->setAllowedTypes(array(
             'novalidate' => array('bool'),
         ));

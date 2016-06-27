@@ -3,13 +3,11 @@
 namespace Avocode\FormExtensionsBundle\Form\Type;
 
 use Avocode\FormExtensionsBundle\Form\EventListener\CollectionUploadSubscriber;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Avocode\FormExtensionsBundle\Storage\FileStorageInterface;
 
 /**
@@ -90,9 +88,9 @@ class CollectionUploadType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults(array(
             'acceptFileTypes'           => '/.*$/i',
