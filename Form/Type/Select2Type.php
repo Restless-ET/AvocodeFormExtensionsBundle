@@ -72,11 +72,9 @@ class Select2Type extends AbstractType
                 'configs'       => $defaults,
                 'transformer'   => null,
             ))
-            ->setNormalizers(array(
-                'configs' => function (Options $options, $configs) use ($defaults) {
-                    return array_merge($defaults, $configs);
-                },
-            ))
+            ->setNormalizer('configs', function (Options $options, $configs) use ($defaults) {
+                return array_merge($defaults, $configs);
+            })
         ;
     }
 
