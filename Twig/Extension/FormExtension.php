@@ -31,8 +31,8 @@ class FormExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'afe_form_javascript' => new \Twig_Function_Method($this, 'renderJavascript', array('is_safe' => array('html'))),
-            'afe_form_stylesheet' => new \Twig_Function_Method($this, 'renderStylesheet', array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('afe_form_javascript', array($this, 'renderJavascript'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('afe_form_stylesheet', array($this, 'renderStylesheet'), array('is_safe' => array('html'))),
         );
     }
 
@@ -42,7 +42,7 @@ class FormExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'e4js'  =>  new \Twig_Filter_Method($this, 'export_for_js'),
+            new \Twig_SimpleFilter('e4js', array($this, 'export_for_js')),
         );
     }
 
