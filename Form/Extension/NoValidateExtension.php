@@ -33,9 +33,7 @@ class NoValidateExtension extends AbstractTypeExtension
             'novalidate' => false,
         ));
 
-        $resolver->setAllowedTypes(array(
-            'novalidate' => array('bool'),
-        ));
+        $resolver->setAllowedTypes('novalidate', array('bool'));
     }
 
     public function getExtendedType()

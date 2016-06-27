@@ -34,9 +34,7 @@ class AutocompleteExtension extends AbstractTypeExtension
             'autocomplete' => true,
         ));
 
-        $resolver->setAllowedTypes(array(
-            'autocomplete' => array('bool'),
-        ));
+        $resolver->setAllowedTypes('autocomplete', array('bool'));
     }
 
     public function getExtendedType()

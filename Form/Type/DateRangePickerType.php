@@ -202,17 +202,13 @@ class DateRangePickerType extends AbstractType
             ),
         ));
 
-        $resolver->setAllowedTypes(array(
-            'showWeekNumbers' => array('bool'),
-            'showDropdowns'   => array('bool'),
-            'minDate'         => array('bool', 'string'),
-            'maxDate'         => array('bool', 'string'),
-            'ranges'          => array('bool', 'array'),
-        ));
+        $resolver->setAllowedTypes('showWeekNumbers', array('bool'));
+        $resolver->setAllowedTypes('showDropdowns', array('bool'));
+        $resolver->setAllowedTypes('minDate', array('bool', 'string'));
+        $resolver->setAllowedTypes('maxDate', array('bool', 'string'));
+        $resolver->setAllowedTypes('ranges', array('bool', 'array'));
 
-        $resolver->setAllowedValues(array(
-            'opens' => array('left', 'right'),
-        ));
+        $resolver->setAllowedValues('opens', array('left', 'right'));
     }
 
     /**

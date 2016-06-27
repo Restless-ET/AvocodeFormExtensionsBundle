@@ -107,16 +107,12 @@ class DateTimePickerType extends AbstractType
             ),
         ));
 
-        $resolver->setAllowedValues(array(
-            'weekStart'   => range(0, 6),
-            'startView'   => array(0, 'month', 1, 'year', 2, 'decade'),
-            'minViewMode' => array(0, 'days', 1, 'months', 2, 'years'),
-        ));
+        $resolver->setAllowedValues('weekStart', range(0, 6));
+        $resolver->setAllowedValues('startView', array(0, 'month', 1, 'year', 2, 'decade'));
+        $resolver->setAllowedValues('minViewMode', array(0, 'days', 1, 'months', 2, 'years'));
 
-        $resolver->setAllowedTypes(array(
-            'format'          => array('string'),
-            'formatSubmit'    => array('string'),
-        ));
+        $resolver->setAllowedTypes('format', array('string'));
+        $resolver->setAllowedTypes('formatSubmit', array('string'));
     }
 
     /**

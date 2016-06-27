@@ -43,11 +43,9 @@ class BootstrapCollectionType extends AbstractType
             'new_label'       => 'afe_collection.new_label'
         ));
 
-        $resolver->setAllowedTypes(array(
-            'sortable'        => array('bool'),
-            'sortable_field'  => array('string'),
-            'new_label'       => array('string'),
-        ));
+        $resolver->setAllowedTypes('sortable', array('bool'));
+        $resolver->setAllowedTypes('sortable_field', array('string'));
+        $resolver->setAllowedTypes('new_label', array('string'));
     }
 
     /**

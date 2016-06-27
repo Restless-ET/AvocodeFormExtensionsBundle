@@ -47,13 +47,11 @@ class TimePickerType extends AbstractType
             ),
         ));
 
-        $resolver->setAllowedTypes(array(
-            'minute_step'     => array('integer'),
-            'second_step'     => array('integer'),
-            'default_time'    => array('string', 'bool'),
-            'show_meridian'   => array('bool'),
-            'disable_focus'   => array('bool'),
-        ));
+        $resolver->setAllowedTypes('minute_step', array('integer'));
+        $resolver->setAllowedTypes('second_step', array('integer'));
+        $resolver->setAllowedTypes('default_time', array('string', 'bool'));
+        $resolver->setAllowedTypes('show_meridian', array('bool'));
+        $resolver->setAllowedTypes('disable_focus', array('bool'));
     }
 
     public function getParent()

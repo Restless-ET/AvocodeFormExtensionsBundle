@@ -62,24 +62,20 @@ class MiniColorsType extends AbstractType
             'theme'           => 'bootstrap'
         ));
 
-        $resolver->setAllowedValues(array(
-            'control'        => array('hue', 'brightness', 'saturation', 'wheel'),
-            'letterCase'     => array('lowercase', 'uppercase'),
-            'position'       => array('default', 'top', 'left', 'top left'),
-            'swatchPosition' => array('left', 'right')
-        ));
+        $resolver->setAllowedValues('control', array('hue', 'brightness', 'saturation', 'wheel'));
+        $resolver->setAllowedValues('letterCase', array('lowercase', 'uppercase'));
+        $resolver->setAllowedValues('position', array('default', 'top', 'left', 'top left'));
+        $resolver->setAllowedValues('swatchPosition', array('left', 'right'));
 
-        $resolver->setAllowedTypes(array(
-            'animationSpeed'  => 'integer',
-            'animationEasing' => 'string',
-            'changeDelay'     => 'integer',
-            'hideSpeed'       => 'integer',
-            'inline'          => 'bool',
-            'opacity'         => 'bool',
-            'showSpeed'       => 'integer',
-            'textfield'       => 'bool',
-            'theme'           => 'string'
-        ));
+        $resolver->setAllowedTypes('animationSpeed', array('integer'));
+        $resolver->setAllowedTypes('animationEasing', array('string'));
+        $resolver->setAllowedTypes('changeDelay', array('integer'));
+        $resolver->setAllowedTypes('hideSpeed', array('integer'));
+        $resolver->setAllowedTypes('inline', array('bool'));
+        $resolver->setAllowedTypes('opacity', array('bool'));
+        $resolver->setAllowedTypes('showSpeed', array('integer'));
+        $resolver->setAllowedTypes('textfield', array('bool'));
+        $resolver->setAllowedTypes('theme', array('string'));
     }
 
     /**

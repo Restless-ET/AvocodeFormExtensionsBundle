@@ -111,22 +111,18 @@ class DatePickerType extends AbstractType
             ),
         ));
 
-        $resolver->setAllowedTypes(array(
-            'format'          => array('string'),
-            'formatSubmit'    => array('string'),
-            'calendarWeeks'   => array('bool'),
-            'disabled'        => array('array'),
-            'autoclose'       => array('bool'),
-            'todayHighlight'  => array('bool'),
-            'clearButton'     => array('bool'),
-        ));
+        $resolver->setAllowedTypes('format', array('string'));
+        $resolver->setAllowedTypes('formatSubmit', array('string'));
+        $resolver->setAllowedTypes('calendarWeeks', array('bool'));
+        $resolver->setAllowedTypes('disabled', array('array'));
+        $resolver->setAllowedTypes('autoclose', array('bool'));
+        $resolver->setAllowedTypes('todayHighlight', array('bool'));
+        $resolver->setAllowedTypes('clearButton', array('bool'));
 
-        $resolver->setAllowedValues(array(
-            'weekStart'     => range(0, 6),
-            'startView'     => array(0, 'month', 1, 'year', 2, 'decade'),
-            'minViewMode'   => array(0, 'days', 1, 'months', 2, 'years'),
-            'todayButton'   => array(true, false, 'linked'),
-        ));
+        $resolver->setAllowedValues('weekStart', range(0, 6));
+        $resolver->setAllowedValues('startView', array(0, 'month', 1, 'year', 2, 'decade'));
+        $resolver->setAllowedValues('minViewMode', array(0, 'days', 1, 'months', 2, 'years'));
+        $resolver->setAllowedValues('todayButton', array(true, false, 'linked'));
     }
 
     public function getParent()

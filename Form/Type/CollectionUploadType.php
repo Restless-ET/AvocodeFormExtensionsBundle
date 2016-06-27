@@ -121,39 +121,35 @@ class CollectionUploadType extends AbstractType
 
         // This seems weird... why to we accept it as option if we force
         // its value?
-        $resolver->setAllowedValues(array(
-            'novalidate'  => array(true),
-            'multipart'   => array(true),
-            'multiple'    => array(true),
-            'required'    => array(false),
-        ));
+        $resolver->setAllowedValues('novalidate', array(true));
+        $resolver->setAllowedValues('multipart', array(true));
+        $resolver->setAllowedValues('multiple', array(true));
+        $resolver->setAllowedValues('required', array(false));
 
-        $resolver->setAllowedTypes(array(
-            'acceptFileTypes'           => array('string'),
-            'autoUpload'                => array('bool'),
-            'editable'                  => array('array'),
-            'loadImageFileTypes'        => array('string'),
-            'loadImageMaxFileSize'      => array('integer'),
-            'maxNumberOfFiles'          => array('integer', 'null'),
-            'maxFileSize'               => array('integer', 'null'),
-            'minFileSize'               => array('integer', 'null'),
-            'multipart'                 => array('bool'),
-            'multiple'                  => array('bool'),
-            'nameable'                  => array('bool'),
-            'nameable_field'            => array('string', 'null'),
-            'novalidate'                => array('bool'),
-            'prependFiles'              => array('bool'),
-            'previewAsCanvas'           => array('bool'),
-            'previewFilter'             => array('string', 'null'),
-            'previewMaxWidth'           => array('integer'),
-            'previewMaxHeight'          => array('integer'),
-            'primary_key'               => array('string'),
-            'required'                  => array('bool'),
-            'sortable'                  => array('bool'),
-            'sortable_field'            => array('string'),
-            'uploadRouteName'           => array('string', 'null'),
-            'uploadRouteParameters'     => array('array')
-        ));
+        $resolver->setAllowedTypes('acceptFileTypes', array('string'));
+        $resolver->setAllowedTypes('autoUpload', array('bool'));
+        $resolver->setAllowedTypes('editable', array('array'));
+        $resolver->setAllowedTypes('loadImageFileTypes', array('string'));
+        $resolver->setAllowedTypes('loadImageMaxFileSize', array('integer'));
+        $resolver->setAllowedTypes('maxNumberOfFiles', array('integer', 'null'));
+        $resolver->setAllowedTypes('maxFileSize', array('integer', 'null'));
+        $resolver->setAllowedTypes('minFileSize', array('integer', 'null'));
+        $resolver->setAllowedTypes('multipart', array('bool'));
+        $resolver->setAllowedTypes('multiple', array('bool'));
+        $resolver->setAllowedTypes('nameable', array('bool'));
+        $resolver->setAllowedTypes('nameable_field', array('string', 'null'));
+        $resolver->setAllowedTypes('novalidate', array('bool'));
+        $resolver->setAllowedTypes('prependFiles', array('bool'));
+        $resolver->setAllowedTypes('previewAsCanvas', array('bool'));
+        $resolver->setAllowedTypes('previewFilter', array('string', 'null'));
+        $resolver->setAllowedTypes('previewMaxWidth', array('integer'));
+        $resolver->setAllowedTypes('previewMaxHeight', array('integer'));
+        $resolver->setAllowedTypes('primary_key', array('string'));
+        $resolver->setAllowedTypes('required', array('bool'));
+        $resolver->setAllowedTypes('sortable', array('bool'));
+        $resolver->setAllowedTypes('sortable_field', array('string'));
+        $resolver->setAllowedTypes('uploadRouteName', array('string', 'null'));
+        $resolver->setAllowedTypes('uploadRouteParameters', array('array'));
     }
 
     /**

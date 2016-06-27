@@ -30,9 +30,7 @@ class HelpMessageExtension extends AbstractTypeExtension
             'help' => null,
         ));
 
-        $resolver->setAllowedTypes(array(
-            'help' => array('null', 'string')
-        ));
+        $resolver->setAllowedTypes('help', array('null', 'string'));
     }
 
     public function getExtendedType()

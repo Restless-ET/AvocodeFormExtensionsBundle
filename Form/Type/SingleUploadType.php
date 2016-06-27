@@ -81,23 +81,19 @@ class SingleUploadType extends AbstractType
             'required'          => false,
         ));
 
-        $resolver->setAllowedValues(array(
-            'multipart'   => array(true),
-            'novalidate'  => array(true),
-            'required'    => array(false),
-        ));
+        $resolver->setAllowedValues('multipart', array(true));
+        $resolver->setAllowedValues('novalidate', array(true));
+        $resolver->setAllowedValues('required', array(false));
 
-        $resolver->setAllowedTypes(array(
-            'nameable'          => array('string', 'bool'),
-            'deleteable'        => array('string', 'bool'),
-            'maxWidth'          => array('integer'),
-            'maxHeight'         => array('integer'),
-            'minWidth'          => array('integer'),
-            'minHeight'         => array('integer'),
-            'previewImages'     => array('bool'),
-            'previewAsCanvas'   => array('bool'),
-            'previewFilter'     => array('string', 'null'),
-        ));
+        $resolver->setAllowedTypes('nameable', array('string', 'bool'));
+        $resolver->setAllowedTypes('deleteable', array('string', 'bool'));
+        $resolver->setAllowedTypes('maxWidth', array('integer'));
+        $resolver->setAllowedTypes('maxHeight', array('integer'));
+        $resolver->setAllowedTypes('minWidth', array('integer'));
+        $resolver->setAllowedTypes('minHeight', array('integer'));
+        $resolver->setAllowedTypes('previewImages', array('bool'));
+        $resolver->setAllowedTypes('previewAsCanvas', array('bool'));
+        $resolver->setAllowedTypes('previewFilter', array('string', 'null'));
     }
 
     /**

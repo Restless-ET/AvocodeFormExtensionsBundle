@@ -74,29 +74,25 @@ class KnobType extends AbstractType
             'hide_box_shadow' => true,
         ));
 
-        $resolver->setAllowedTypes(array(
-            'width'           => array('integer'),
-            'height'          => array('integer'),
-            'displayInput'    => array('bool'),
-            'displayPrevious' => array('bool'),
-            'angleArc'        => array('numeric'),
-            'angleOffset'     => array('numeric'),
-            'cursor'          => array('numeric', 'bool'),
-            'readOnly'        => array('bool'),
-            'thickness'       => array('numeric'),
-            'fgColor'         => array('string'),
-            'bgColor'         => array('string'),
-            'step'            => array('numeric'),
-            'min'             => array('numeric'),
-            'max'             => array('numeric'),
-            'hide_box_shadow' => array('bool'),
-        ));
+        $resolver->setAllowedTypes('width', array('integer'));
+        $resolver->setAllowedTypes('height', array('integer'));
+        $resolver->setAllowedTypes('displayInput', array('bool'));
+        $resolver->setAllowedTypes('displayPrevious', array('bool'));
+        $resolver->setAllowedTypes('angleArc', array('numeric'));
+        $resolver->setAllowedTypes('angleOffset', array('numeric'));
+        $resolver->setAllowedTypes('cursor', array('numeric', 'bool'));
+        $resolver->setAllowedTypes('readOnly', array('bool'));
+        $resolver->setAllowedTypes('thickness', array('numeric'));
+        $resolver->setAllowedTypes('fgColor', array('string'));
+        $resolver->setAllowedTypes('bgColor', array('string'));
+        $resolver->setAllowedTypes('step', array('numeric'));
+        $resolver->setAllowedTypes('min', array('numeric'));
+        $resolver->setAllowedTypes('max', array('numeric'));
+        $resolver->setAllowedTypes('hide_box_shadow', array('bool'));
 
-        $resolver->setAllowedValues(array(
-            'angleArc'    => range(0, 359),
-            'angleOffset' => range(0, 359),
-            'lineCap'     => array('butt', 'round'),
-        ));
+        $resolver->setAllowedValues('angleArc', range(0, 359));
+        $resolver->setAllowedValues('angleOffset', range(0, 359));
+        $resolver->setAllowedValues('lineCap', array('butt', 'round'));
     }
 
     public function getParent()
