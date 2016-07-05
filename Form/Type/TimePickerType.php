@@ -59,6 +59,17 @@ class TimePickerType extends AbstractType
         return 'time';
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * BC for Symfony < 3.0.
+     */
     public function getName()
     {
         return 'afe_time_picker';
