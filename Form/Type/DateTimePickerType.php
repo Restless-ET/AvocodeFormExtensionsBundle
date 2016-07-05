@@ -120,7 +120,12 @@ class DateTimePickerType extends AbstractType
      */
     public function getParent()
     {
-        return 'datetime';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'datetime';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\DateTimeType';
     }
 
     /**

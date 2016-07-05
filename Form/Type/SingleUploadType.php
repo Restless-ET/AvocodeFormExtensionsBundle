@@ -101,7 +101,12 @@ class SingleUploadType extends AbstractType
      */
     public function getParent()
     {
-        return 'file';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'file';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\FileType';
     }
 
     /**

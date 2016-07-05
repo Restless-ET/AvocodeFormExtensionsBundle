@@ -56,7 +56,12 @@ class TimePickerType extends AbstractType
 
     public function getParent()
     {
-        return 'time';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'time';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\TimeType';
     }
 
     /**

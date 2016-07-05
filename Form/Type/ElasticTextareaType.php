@@ -16,7 +16,12 @@ class ElasticTextareaType extends AbstractType
      */
     public function getParent()
     {
-        return 'textarea';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'textarea';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\TextareaType';
     }
 
     /**

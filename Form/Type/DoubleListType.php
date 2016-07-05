@@ -37,7 +37,18 @@ class DoubleListType extends AbstractType
      */
     public function getParent()
     {
-        return $this->widget;
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return $this->widget;
+        }
+
+        if ($this->widget == 'entity') {
+            return 'Symfony\Bridge\Doctrine\Form\Type\EntityType';
+        } elseif ($this->widget == 'document') {
+            return 'Doctrine\Bundle\MongoDBBundle\Form\Type\DocumentType';
+        }
+
+        return 'Symfony\Bridge\Propel1\Form\Type\ModelType';
     }
 
     /**

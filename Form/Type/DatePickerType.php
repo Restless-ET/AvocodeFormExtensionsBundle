@@ -127,7 +127,12 @@ class DatePickerType extends AbstractType
 
     public function getParent()
     {
-        return 'text';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'text';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\TextType';
     }
 
     /**

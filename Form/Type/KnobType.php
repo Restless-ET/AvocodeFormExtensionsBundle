@@ -97,7 +97,12 @@ class KnobType extends AbstractType
 
     public function getParent()
     {
-        return 'number';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'number';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\NumberType';
     }
 
     /**

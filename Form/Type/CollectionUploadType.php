@@ -157,7 +157,12 @@ class CollectionUploadType extends AbstractType
      */
     public function getParent()
     {
-        return 'collection';
+        // BC for Symfony < 3
+        if (!method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
+            return 'collection';
+        }
+
+        return 'Symfony\Component\Form\Extension\Core\Type\CollectionType';
     }
 
     /**
